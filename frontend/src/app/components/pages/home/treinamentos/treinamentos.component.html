@@ -1,0 +1,40 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-teste',
+  template: `
+    <div>
+      <h2>Teste de Ansiedade, Depressão e Estresse</h2>
+      <div *ngFor="let pergunta of perguntas; let i = index">
+        <p>{{ pergunta }}</p>
+        <select [(ngModel)]="respostas[i]">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+      <button (click)="gerarGrafico()">Gerar Gráfico</button>
+      <div *ngIf="graficoGerado">
+        <h3>Resultado do Teste</h3>
+        <canvas #grafico></canvas>
+      </div>
+    </div>
+  `,
+  styles: []
+})
+export class TesteComponent {
+  perguntas = [
+    "Você se sente ansioso com frequência?",
+    "Você se sente deprimido com frequência?",
+    "Você se sente estressado com frequência?"
+  ];
+  respostas = [1, 1, 1];
+  graficoGerado = false;
+
+  gerarGrafico() {
+    // Lógica para gerar o gráfico aqui
+    console.log("Gerando gráfico com respostas:", this.respostas);
+    this.graficoGerado = true;
+  }
+}
