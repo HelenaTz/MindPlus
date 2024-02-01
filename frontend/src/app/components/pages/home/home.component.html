@@ -1,14 +1,28 @@
 <!-- home.component.html -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
 <div class="homepage">
+  <div class="secondHeader"></div>
   <div class="container">
     <div class="grid">
-      <div class="card" *ngFor="let card of cards">
-        <img [src]="card.src" />
-        <h2>{{ card.title }}</h2>
-          <p>{{ card.description }}</p>
-          <button type="button">{{ card.actionText }}</button>
-        </div>
+      <div class="card">
+        <span class="material-symbols-outlined"> partner_exchange </span>
+        <span>Consultivo</span>
+      </div>
+      <div class="card">
+        <span class="material-symbols-outlined"> mindfulness </span>
+        <span>Feedback</span>
+      </div>
+      <div class="card">
+        <span class="material-symbols-outlined"> partner_exchange </span>
+        <span>Estratégia</span>
+      </div>
+      <div class="card">
+        <span class="material-symbols-outlined"> partner_exchange </span>
+        <span>Otimização</span>
       </div>
     </div>
   </div>
-  
+</div>
